@@ -679,7 +679,102 @@ margin-bottom: 2rem;
  }
 }
 
-._error{
-  box-shadow: 0 0 0.5rem red;
-  border-radius: 0.8rem;
+
+
+.popup__fieldset_policy {
+  display: flex;
+  align-items: center;
+}
+.popup__checkbox {
+  display: none;
+
+  &:checked + .popup__lab_checkbox::after {
+    scale: 1;
+  }
+  &._error {
+    .popup__lab_checkbox::before {
+      box-shadow: 0 0 1.5rem red;
+      border-radius: 0.8rem;
+    }
+  }
+}
+
+
+
+
+.popup__lab_checkbox {
+  
+  font-weight: 400;
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+
+  @include bp($point_2, min) {
+    font-size: 2rem;
+    line-height: 3.2rem;
+  }
+
+  @include bp($point_3) {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+  }
+
+  &::before {
+    content: "";
+    align-self: center;
+    border: 0.1rem solid black;
+    margin-right: 0.5rem;
+
+    @include bp($point_2, min) {
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 0.8rem;
+    }
+
+    @include bp($point_3) {
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 0.2rem;
+    }
+  }
+  &::after {
+    content: "";
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    translate: 30% -50%;
+    align-self: center;
+    background-color: $main_color;
+    width: 1.4rem;
+    height: 1.4rem;
+    scale: 0;
+    margin-right: 0.5rem;
+
+    @include bp($point_2, min) {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 0.8rem;
+    }
+
+    @include bp($point_3) {
+      width: 0.87rem;
+      height: 0.87rem;
+      border-radius: 0.2rem;
+    }
+  }
+}
+
+.footer__lab_checkbox{
+  color: black;
+  &::before {
+    border: 0.1rem solid black;
+  }
+}
+
+.popup__lab_checkbox{
+  color: white;
+  &::before {
+    border: 0.1rem solid white;
+  }
 }

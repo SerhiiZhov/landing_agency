@@ -379,3 +379,10 @@ margin-bottom: 2rem;
 
 }
 
+
+
+@include bp($point_9) {
+.changeMessage{
+    text-align: center;
+}
+}
