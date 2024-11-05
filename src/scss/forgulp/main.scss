@@ -1,0 +1,18 @@
+@import '../null';
+@import '../variables';
+@import '../fonts';
+@import '../helpers/extends';
+@import '../helpers/mixin';
+@import '../base';
+@import '../animate';
+@import '../swiper-bundle';
+
+// blocks
+
+@import '../blocks/header';
+@import '../blocks/hero';
+@import '../blocks/trustedCompanies';
+@import '../blocks/gallery';
+@import '../blocks/review';
+@import '../blocks/services';
+@import '../blocks/footer';

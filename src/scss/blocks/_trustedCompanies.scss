@@ -1,0 +1,106 @@
+.trusted__title{
+  
+  
+  @include bp($point_2, min) {
+    margin-top: -4rem;
+  }
+  
+  margin-bottom: 1rem;
+}
+
+.trusted__brand_container{
+  position: relative;
+display: flex;
+  overflow: hidden;
+}
+
+
+.trusted__brand_container:before,
+.trusted__brand_container:after {
+  content: "";
+  height: 100%;
+  top: 0;
+  width: 20%;
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+.trusted__brand_container:before {
+  left: 0rem;
+  background: linear-gradient(
+    90deg,
+    (#fcfcfe) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+.trusted__brand_container:after {
+  right: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    (#fcfcfe) 100%
+  );
+}
+
+ 
+.item__wrapper{
+  display: flex;
+  align-items: start;
+ 
+  @include bp($point_2, min) {
+    min-width: calc($container_1 + 30rem);
+  }
+
+  @include bp($point_3) {
+    min-width: 32rem;
+  }
+  
+}
+
+.item{
+  min-height: 3.5rem;
+
+  
+  @include bp($point_2, min) {
+    margin-right: 10rem;
+    min-width: 12.6rem;
+  }
+
+  
+  @include bpd($point_6, $point_3) {
+    margin-right: 6rem;
+    min-width: 10.6rem;
+  }
+
+  
+  @include bpd($point_8, $point_7) {
+    margin-right: 5rem;
+    min-width: 8rem;
+  }
+  
+  
+  @include bp($point_9) {
+    margin-right: 4rem;
+    min-width: 6rem;
+  }
+  
+
+  img{
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.marquee {
+  animation: 30s scroll linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

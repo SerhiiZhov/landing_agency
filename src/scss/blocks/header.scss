@@ -1,0 +1,397 @@
+.header {
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;  
+  width: 100dvw;
+  padding: 2.6rem 0;
+
+  &::after {
+    transition: all 0.3s ease-in-out;
+    width: 100dvw;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.897);
+    backdrop-filter: blur(0.5rem);
+    height: 8rem;
+
+    @include bp($point_5) {
+      z-index: 1;
+    }
+  }
+
+  &:has(.open) {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100dvw;
+      height: 100dvh;
+      background: rgba(black, $alpha: 0.5);
+      backdrop-filter: blur(0.5rem);
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    @include bp($point_4, min) {
+      justify-content: center;
+    }
+
+    @include bp($point_5) {
+      justify-content: space-between;
+    }
+  }
+
+  &__logo_w {
+    position: relative;
+    z-index: 100;
+
+    width: 12rem;
+    height: 4.8rem;
+    animation: logoMove 2s 3s linear forwards ;
+
+    @include bp($point_2, min) {
+      translate: (-25% 0);
+      top: 40dvh;
+      left: 50%;
+      scale: 7;
+    }
+
+    @include bpd($point_6, $point_3) {
+      top: 40dvh;
+      left: 50%;
+      translate: (-50% 0);
+      scale: 3;
+    }
+
+    @include bp($point_7) {
+      top: 40dvh;
+      left: 50%;
+      translate: (-50% 0);
+      scale: 1.5;
+    }
+
+    @include bp($point_2, min) {
+      @keyframes logoMove {
+        0% {
+          translate: (-25% 0);
+          top: 40dvh;
+          left: 50%;
+          scale: 7;
+        }
+
+        100% {
+          translate: (0 0);
+          top: 0;
+          left: 0;
+          scale: 1;
+        }
+      }
+    }
+
+    @include bpd($point_6, $point_3) {
+      @keyframes logoMove {
+        0% {
+          top: 40dvh;
+          left: 50%;
+          translate: (-50% 0);
+          scale: 3;
+        }
+
+        100% {
+          translate: (0 0);
+          top: 0;
+          left: 0;
+          scale: 1;
+        }
+      }
+    }
+
+    @include bp($point_7) {
+      @keyframes logoMove {
+        0% {
+          top: 40dvh;
+          left: 50%;
+          translate: (-50% 0);
+          scale: 1.5;
+        }
+
+        100% {
+          top: 0;
+          left: 0;
+          translate: (0 0);
+          scale: 1;
+        }
+      }
+    }
+
+    & svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__menu {
+    margin-left: auto;
+  }
+
+  &.shrink {
+    padding: 0.5rem 0 2.6rem 0;
+
+    &::after {
+      height: 5.5rem;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  position: relative;
+  z-index: 1;
+
+  &__item {
+
+    
+    @include bp($point_4, min) {
+    @media (hover: hover){
+      &:hover{
+        scale: 1.1;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+    }
+    
+    @include bp($point_2, min) {
+      margin-right: 6rem;
+    }
+
+    @include bpd($point_4, $point_3) {
+      margin-right: 3rem;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    font-weight: 400;
+    line-height: 2.8rem;
+    color: $main_color;
+    padding: 2rem;
+    margin: -2rem;
+
+    @include bp($point_2, min) {
+      font-size: 2rem;
+    }
+
+    @include bpd($point_4, $point_3) {
+      font-size: 1.4rem;
+    }
+  }
+
+  @include bp($point_5) {
+    transition: all 0.5s ease-in-out;
+    display: none;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(2rem);
+    background-color: rgba($color: $main_color, $alpha: 0.8);
+    right: -150rem;
+    top: 0;
+    height: 100dvh;
+    padding: 10rem 5rem;
+    & .menu__item {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+
+      &:last-child {
+        margin: 0;
+      }
+
+      & a {
+        color: white;
+      }
+    }
+  }
+
+  &.open {
+    right: 0rem;
+    overflow: auto;
+
+    @include bpd($point_8, $point_5) {
+      width: 20rem;
+    }
+
+    @include bp($point_9) {
+      width: 100dvw;
+    }
+
+    & .menu__item {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.menu__button {
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+
+  @include bp($point_4, min) {
+    display: none;
+  }
+
+  @include bp($point_5) {
+    align-self: center;
+    display: block;
+  }
+
+  cursor: pointer;
+  height: 2.7rem;
+  width: 2.7rem;
+  overflow: visible;
+  position: relative;
+  z-index: 2;
+
+  & span,
+  & span::before,
+  & span::after {
+    background: $main_color;
+    display: block;
+    height: 0.4rem;
+    opacity: 1;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+  }
+
+  & span::before,
+  & span::after {
+    content: "";
+  }
+
+  & span {
+    right: 0px;
+    top: 1.3rem;
+    width: 2.7rem;
+  }
+  & span:before {
+    right: 0;
+    top: -1rem;
+    width: 1.6rem;
+  }
+  & span:after {
+    right: 0;
+    top: 1rem;
+    width: 2rem;
+  }
+
+  &.open span {
+    transform: rotate(-45deg);
+    top: 1.3rem;
+    width: 2.7rem;
+  }
+  &.open span:before {
+    top: 0;
+    transform: rotate(90deg);
+    width: 2.7rem;
+  }
+  &.open span:after {
+    top: 0;
+    left: 0;
+    transform: rotate(90deg);
+    opacity: 0;
+    width: 0;
+  }
+}
+
+.svg_text {
+  
+  animation: textCreate 2s linear forwards;
+
+  
+  @include bp($point_2, min) {
+    stroke-width: 0.1rem;
+  }
+
+  
+  @include bp($point_3) {
+    stroke-width: 0.02rem;
+  }
+  
+  
+}
+
+@keyframes textCreate {
+  0% {
+    stroke-dasharray: 25rem;
+    stroke-dashoffset: 25rem;
+    stroke: transparent;
+    fill: transparent;
+  }
+
+  10% {
+    stroke: $main_color;
+  }
+
+  90% {
+    fill: transparent;
+  }
+
+  100% {
+    
+    stroke: $main_color;
+    fill: $main_color;
+    stroke-dashoffset: 0;
+  }
+}
+
+.svg_point {
+  animation: pointCreate 2s linear forwards;
+}
+
+@keyframes pointCreate {
+  0% {
+    fill: transparent;
+  }
+
+  90% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: $second_color;
+  }
+}
+
+.svg_circle {
+  stroke-dasharray: 37.6;
+  stroke-dashoffset: 37.6;
+
+  animation: circleCreate 1s 1s linear forwards;
+}
+
+@keyframes circleCreate {
+  0% {
+    stroke-dasharray: 37.6;
+    stroke-dashoffset: 37.6;
+  }
+
+  100% {
+    stroke-dashoffset: 18.8;
+  }
+}

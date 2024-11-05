@@ -1,0 +1,189 @@
+.gallery__title {
+  margin-bottom: 2rem;
+}
+
+.gallery__descr {
+  margin-bottom: 4rem;
+  font-weight: 400;
+  color: $main_color;
+
+  
+  @include bp($point_2, min) {
+    font-size: 2rem;
+    line-height: 3.6rem;
+    text-align: left;
+  }
+  
+  
+  @include bpd($point_6, $point_3) {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    text-align: center;
+  }
+
+  
+  @include bp($point_7) {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    text-align: center;
+  }
+  
+  
+}
+.gallery__grid_w {
+  
+  @include bp($point_4, min) {
+    display: grid;
+    column-gap: 3rem;
+    row-gap: 2.8rem;
+      grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  } 
+
+  
+   @include bpd($point_8, $point_5) {
+    display: grid;
+    column-gap: 3rem;
+    row-gap: 2.8rem;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: repeat(4, auto);
+  }    
+  
+}
+
+.gallery__item
+{
+    
+    @include bp($point_9) {
+    margin-bottom: 3rem;
+    }
+    
+}
+
+.gallery__item--main {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+
+.gallery__img_w {
+
+    
+    @include bp($point_8, min) {
+        margin-bottom: 1.5rem;
+    }
+
+    
+    @include bp($point_9) {
+    margin: 0 auto 0.5rem;
+    max-width: 20rem;
+    }
+    
+    
+
+  & img {
+    width: 100%;
+    height: 100%;
+    border-radius: 3rem;
+  }
+}
+
+
+.gallery__date{
+    margin-bottom: 1rem;
+color: $main_color;
+
+font-weight: 400;
+
+
+
+
+@include bp($point_8, min) {
+    text-align: left;
+}
+
+@include bp($point_9) {
+    text-align: center;
+}
+
+
+
+@include bp($point_2, min) {
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+}
+
+
+@include bpd($point_4, $point_3) {
+    font-size: 0.8rem;
+    line-height: 1rem;
+}
+
+
+@include bp($point_5) {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+
+
+}
+
+.gallery__title_item{
+    
+    color: $main_color;
+font-weight: 700;
+
+
+
+@include bp($point_2, min) {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    text-align: left;
+    margin-bottom: 1.2rem;
+}
+
+
+@include bpd($point_4, $point_3) {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    text-align: left;
+    
+}
+
+@include bpd($point_6, $point_5) {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    text-align: left;
+    margin-bottom: 1.2rem;
+}
+
+
+@include bp($point_7) {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
+
+}
+
+.gallery__description{
+    color: $main_color;
+    font-weight: 400;
+
+
+@include bp($point_8, min) {
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+    text-align: left;
+}
+
+
+@include bp($point_9) {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    text-align: center;
+}
+
+}

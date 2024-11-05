@@ -1,0 +1,241 @@
+.title.review__title {
+    text-align: center;
+    
+    @include bp($point_2, min) {
+        line-height: 6rem;
+        margin-bottom: 7.5rem;   
+    }
+
+    
+    @include bpd($point_8, $point_3) {
+        margin-bottom: 2.5rem;  
+    }
+    
+    @include bp($point_9) {
+        margin-bottom: 0.5rem;
+    }
+    
+    
+    
+}
+
+.review__swiper_w{
+
+    
+    @include bp($point_2, min) {
+        max-width: 67rem;
+    }
+    
+    
+    @include bpd($point_6, $point_3) {
+        max-width: 35rem;
+    }
+
+    
+    @include bpd($point_8, $point_7) {
+        max-width: 25rem;
+    }
+
+    
+    @include bp($point_9) {
+        max-width: 18rem;
+    }
+    
+    
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    &::after{
+       
+        content: "";
+        position: absolute;
+        background: url('../img/icons/icon.svg#dots') center / 100% no-repeat ;
+        @include bp($point_2, min) {
+            top: -2rem;
+            right: -10rem;
+            width: 5.5rem;
+            height: 4.5rem;
+        }
+
+        
+        @include bpd($point_8, $point_3) {
+            top: -2rem;
+            right: -3rem;
+            width: 3.5rem;
+            height: 2.5rem;
+        }
+       
+       @include bp($point_9) {
+        top: -1rem;
+        right: -1.7rem;
+        width: 2.5rem;
+        height: 1.8rem;
+       }
+       
+        }
+    
+    &::before{
+       
+        content: "";
+        position: absolute;
+        
+        rotate: (180deg);
+        
+        background: url('../img/icons/icon.svg#dots') center / 100% no-repeat ;
+
+        
+        @include bp($point_2, min) {
+            width: 5.5rem;
+            height: 4.5rem;
+            top: -2rem;
+            left: -9rem;
+        }
+
+        
+        @include bpd($point_8, $point_3) {
+            width: 3.5rem;
+            height: 2.5rem;
+            top: -2rem;
+            left: -2rem;
+        }
+        
+        @include bp($point_9) {
+            width: 2.5rem;
+            height: 1.8rem;
+            top: -1rem;
+            left: -1.8rem;
+        }
+        
+        
+    }
+}
+
+.review__swiper {
+    max-width: 67rem;
+    width: 100%;
+
+    
+    @include bp($point_2, min) {
+        margin-bottom: 12rem;
+    }
+
+    
+    @include bpd($point_8, $point_3) {
+        margin-bottom: 8rem;
+    }
+    
+    @include bp($point_9) {
+        margin-bottom: 5rem;
+    }
+    
+    
+    
+}
+.swiper-wrapper {
+    margin-bottom: 7.13rem;
+}
+.swiper-slide {
+    font-weight: 400;
+text-align: center;
+color: $main_color;
+
+
+@include bp($point_2, min) {
+    font-size: 1.6rem;
+    line-height: 5rem;
+}
+
+
+@include bpd($point_6, $point_3) {
+    font-size: 1.4rem;
+    line-height: 3rem;
+}
+
+
+@include bpd($point_8, $point_7) {
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+
+@include bp($point_9) {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+
+
+
+}
+
+.swiper-pagination{
+    padding-top: 1rem;
+    width: 100% !important;
+    & p {display: none;}
+}
+
+.review__img_w{
+    position: relative; 
+    border-radius: 50%;  
+    
+    @include bp($point_2, min) {
+        width: 8.6rem;
+        height: 8.6rem;
+        
+    }
+
+    
+    @include bpd($point_6, $point_3) {
+        width: 6.6rem;
+        height: 6.6rem;
+    }
+
+    
+    @include bpd($point_8, $point_7) {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    
+    @include bp($point_9) {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    
+    
+
+    & img{
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: (-50% -50%);
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@keyframes moveDots2 {
+    0%{
+      translate: (0 20%);
+    }
+
+    50%{
+      translate: (0 -20%);
+    }
+    100%{
+      translate: (0 20%);
+    }
+}
+
+@keyframes moveDots {
+    0%{
+      translate: (0 -20%);
+    }
+
+    50%{
+      translate: (0 20%);
+    }
+    100%{
+      translate: (0 -20%);
+    }
+}

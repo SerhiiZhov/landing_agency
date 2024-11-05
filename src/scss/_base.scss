@@ -1,0 +1,289 @@
+html{
+    &:has(.open){
+      overflow: hidden !important;
+    }
+    
+  }
+  
+  html,
+  body {
+    min-height: 100dvh;
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+
+    @include bpd($point_2, 3000px) {
+      font-size: calc(100dvw / 1920 * 10);
+    }
+    
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    font-family: $main_font;
+    font-size: $font_size;
+    position: relative;
+    &:has(.active){
+      overflow: hidden;
+    }
+  }
+  
+  main {
+    flex-grow: 1;
+  }
+
+.section {
+    padding: $section_padding 0; 
+    
+    
+    @include bp($point_2, min) {
+      padding: $section_padding 0; 
+    }
+
+    
+    @include bpd($point_6, $point_3) {
+    padding: 5rem 0;
+    }
+
+    
+    @include bp($point_7) {
+    padding: 2rem 0;
+    }
+    
+    
+    
+}
+
+.section.section--fullscreen{
+
+  @include bp($point_2, min) {
+  min-height: 100dvh;
+  padding: 0;
+  }
+  
+  @include bp($point_3) {
+  padding: 3rem 0;
+  }
+  
+}
+
+.section.section--blue{
+  background: #706FE505;
+}
+
+.container{
+    max-width: $container_1;
+    margin: 0 auto;
+
+    
+    @include bp($point_2, min) {
+        padding: 0 $container_main;
+    }
+
+    
+    @include bpd($point_6, $point_3) {
+        padding: 0 2rem;
+    }
+
+    
+    @include bp($point_7) {
+    padding: 0 1rem;
+    }
+    
+    
+
+     &--fullscreen{
+        @include bp($point_2, min) {
+            height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    } 
+
+    &--big{
+      max-width: calc($container_1 + 30rem);
+    }
+
+    &--decor{
+      position: relative;
+
+      &::after{
+        animation: moveDots2 3s linear infinite;
+        content: "";
+        position: absolute;
+        
+       
+        
+        
+        @include bp($point_2, min) {
+          bottom: -10rem;
+          right: 10rem;
+          width: 10rem;
+          height: 7rem;
+          background: url('../img/icons/icon.svg#decor_dots') center / 100% no-repeat ;
+        }
+
+        
+        @include bpd($point_6, $point_3) {
+          bottom: -17%;
+          right: 4%;
+          width: 9rem;
+          height: 6rem;
+          background: url('../img/icons/icon.svg#decor_dots') center / 90% no-repeat ;
+        }
+
+        
+        @include bpd($point_8, $point_7) {
+          bottom: -17%;
+          right: 4%;
+          width: 7rem;
+          height: 4rem;
+          background: url('../img/icons/icon.svg#decor_dots') center / 80% no-repeat ;
+        }
+
+        
+        @include bp($point_9) {
+          bottom: -10%;
+          right: 4%;
+          width: 7rem;
+          height: 4rem;
+          background: url('../img/icons/icon.svg#decor_dots') center / 60% no-repeat ;
+        }
+        
+        
+      }
+      &::before{
+        animation: moveDots 3s linear infinite;
+        content: "";
+        position: absolute;
+               
+        @include bp($point_2, min) {
+          top: -2rem;
+          left: 15rem;
+          width: 10rem;
+          height: 7rem;
+          background: url('../img/icons/icon.svg#decor_dots') center / 100% no-repeat ;
+        }
+
+        
+        @include bpd($point_6, $point_3) {
+          top: -2%;
+          left: 5%;
+          width: 9rem;
+          height: 6rem;
+          background: url('../img/icons/icon.svg#decor_dots') center / 90% no-repeat ;
+        }
+
+        
+        @include bpd($point_8, $point_7) {
+          top: -2%;
+          left: 5%;
+          width: 7rem;
+          height: 4rem;
+          background: url('../img/icons/icon.svg#decor_dots') center / 80% no-repeat ;
+        }
+        
+
+        
+        @include bp($point_9) {
+          top: -2%;
+          left: 5%;
+          width: 7rem;
+          height: 4rem;
+          background: url('../img/icons/icon.svg#decor_dots') center / 60% no-repeat ;
+        }
+        
+      }
+    }
+}
+
+.btn{
+    display: inline-flex;
+    height: 4.7rem;
+    user-select: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: $second_color;
+    border-radius: 1.2rem;
+font-weight: 600;
+
+
+    
+    @include bp($point_2, min) {
+        padding: 0 4rem;
+    }
+        
+
+@include bpd($point_6, $point_3) {
+    padding: 0 3rem;
+}
+    @include bp($point_4, min) {
+        font-size: 1.8rem;
+        word-wrap: none;
+    }
+
+    
+    @include bp($point_5) {
+      font-size: 1.2rem;
+      padding: 0 2rem;
+    }
+
+    
+    @include bp($point_9) {
+    margin-bottom: 1rem;
+    }
+    
+    
+}
+
+.title {
+  font-weight: 700;
+  text-align: left;
+  color: $main_color;
+
+  @include bp($point_2, min) {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+
+  @include bpd($point_4, $point_3) {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    text-align: center;
+  }
+
+  @include bpd($point_6, $point_5) {
+    font-size: 2rem;
+    line-height: 4rem;
+    text-align: center;
+  }
+
+  @include bpd($point_8, $point_7) {
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    text-align: center;
+  }
+
+  @include bp($point_9) {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    text-align: center;
+  }
+}
+
+.title.title--small{
+  font-weight: 600;
+  text-align: center;
+    
+  
+  @include bp($point_2, min) {
+    font-size: 2.4rem;
+  }    
+
+  
+  @include bpd($point_6, $point_3) {
+    font-size: 2.4rem;
+  }
+}
